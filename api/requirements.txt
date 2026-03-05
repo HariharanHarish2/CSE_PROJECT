@@ -1,0 +1,9 @@
+google-generativeai
+fastapi
+uvicorn
+streamlit
+openai
+pandas
+sqlalchemy
+pydantic
+python-dotenv
