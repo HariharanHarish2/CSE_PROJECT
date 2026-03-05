@@ -27,6 +27,14 @@ class ChatResponse(BaseModel):
     results: Optional[Dict[str, Any]] = None
     error: Optional[str] = None
 
+@app.get("/")
+async def root():
+    """Root endpoint to show the backend is active."""
+    return {
+        "status": "HNV AI Backend Running",
+        "endpoints": ["/chat", "/status", "/stats"]
+    }
+
 @app.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(request: ChatRequest):
     """Main endpoint handling NLQ natural language queries."""
